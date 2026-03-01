@@ -1,13 +1,25 @@
-### welcome to my project!
+### 📊 Screen Time, Stress and Sleep: An Exploratory Data Analysis
 
-The objective of this portfolio is to carry out a sequence of analyzes with data and studies on slq about sleep, stress and screen time, and how all of this correlates using exploratory data analysis and visualizations to identify possible patterns. Basically to investigate whether there is a correlation between daily screen time and increased stress, as well as possible impacts on sleep duration.
+This project investigates the relationship between daily screen time, perceived stress levels, and sleep duration. Using exploratory data analysis and visualization techniques, the study examines whether increased smartphone usage correlates with higher stress and reduced sleep duration. The objective is to identify behavioral patterns through data rather than establish causal relationships.
 
-Key Questions
-- Does higher screen time correlate with increased stress?
-- Is sleep duration negatively affected by excessive smartphone usage?
+### Introduction
+Digital device usage has increased significantly in recent years, raising concerns about its potential impact on mental health and sleep quality.
+This project aims to explore whether higher daily screen time is associated with:
+- Increased stress levels
+- Reduced sleep duration
 
-Methods
-- Data cleaning and exploratory analysis in Python
+The focus is on identifying statistical correlations and observable patterns in the data.
+*************************
+### Dataset Description
+
+
+
+### Methodology
+
+The analysis followed these steps:
+- Data cleaning and preprocessing in Python
+- Handling missing values and outliers
+- Exploratory Data Analysis (EDA)
+- Correlation analysis
 - SQL queries for aggregation and pattern detection
-- Visualization in Power BI
-
+- Data visualization and dashboard development in Power BI
