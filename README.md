@@ -14,7 +14,7 @@ Este repositório reúne meus projetos práticos, desenvolvidos com Python, SQL 
 
 | Projeto | Ferramentas | Status |
 |---|---|---|
-| [📱 Tempo de tela, estresse e sono](./projeto-01-tempo-de-tela/) | Python · SQL · Power BI | 🔄 Em desenvolvimento |
+| [Tempo de tela, estresse e sono](./projeto-01-tempo-de-tela/) | Python · SQL · Power BI | 🔄 Em desenvolvimento |
 
 ---
 
