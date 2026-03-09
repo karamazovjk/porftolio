@@ -15,7 +15,7 @@ Este repositório reúne meus projetos práticos, desenvolvidos com Python, SQL 
 | Projeto | Ferramentas | Status |
 |---|---|---|
 | [Tempo de tela, estresse e sono](./projeto-01-tempo-de-tela/) | Python · SQL · Power BI | 🔄 Em desenvolvimento |
-| [Otimizador de navegação](./projeto-02-otimizador-de-perfomance/) | Python | 🔄 Em desenvolvimento |
+| [Otimizador de perfomace](./projeto-02-otimizador-de-perfomance/) | Python | 🔄 Em desenvolvimento |
 ---
 
 ## Tecnologias que utilizo
