@@ -1,0 +1,137 @@
+# 🛠️ Guia: Transformar o Otimizador em .exe
+
+## Pré-requisitos
+
+Você vai precisar do **PyInstaller** instalado. Rode no terminal:
+
+```bash
+pip install pyinstaller
+```
+
+Confirme que funcionou:
+
+```bash
+pyinstaller --version
+```
+
+---
+
+## Passo 1 — Navegue até a pasta do projeto
+
+```bash
+cd caminho\para\portfolio\projeto-02-otimizador-de-performace
+```
+
+---
+
+## Passo 2 — Gere o executável
+
+```bash
+pyinstaller --onefile --windowed --name "OtimizadorPC" otimizador_pc_v2.py
+```
+
+**O que cada flag faz:**
+
+| Flag | Significado |
+|------|-------------|
+| `--onefile` | Empacota tudo em um único `.exe` |
+| `--windowed` | Não abre janela de terminal junto com o app |
+| `--name "OtimizadorPC"` | Nome do arquivo final |
+
+---
+
+## Passo 3 — Encontre o executável
+
+Após rodar, o PyInstaller vai criar duas pastas:
+
+```
+projeto-02-otimizador-de-performace/
+├── build/          ← arquivos temporários (pode ignorar)
+├── dist/
+│   └── OtimizadorPC.exe   ← ✅ SEU EXECUTÁVEL ESTÁ AQUI
+└── OtimizadorPC.spec       ← configuração gerada automaticamente
+```
+
+O `.exe` que você usa é o `dist/OtimizadorPC.exe`.
+
+---
+
+## Passo 4 — Copiar o JSON junto com o .exe
+
+O agendador salva as configurações no arquivo `otimizador_schedule.json`.
+Quando distribuir ou usar o `.exe`, mantenha o JSON na **mesma pasta** que o executável:
+
+```
+📁 OtimizadorPC/
+├── OtimizadorPC.exe
+└── otimizador_schedule.json   ← copie este arquivo junto
+```
+
+Se o JSON não existir, o app cria um novo automaticamente — sem problema.
+
+---
+
+## Passo 5 — Adicionar ícone personalizado (opcional, mas fica bonito)
+
+Você vai precisar de um arquivo `.ico` (ícone do Windows).
+
+**Como converter uma imagem em .ico gratuitamente:**
+- Acesse https://convertio.co/pt/png-ico/
+- Faça upload de qualquer imagem PNG (recomendado: 256x256 px)
+- Baixe o `.ico` gerado e coloque na pasta do projeto
+
+Depois gere o exe com o ícone:
+
+```bash
+pyinstaller --onefile --windowed --name "OtimizadorPC" --icon="icone.ico" otimizador_pc_v2.py
+```
+
+---
+
+## Possíveis problemas
+
+### ❌ "ModuleNotFoundError: psutil"
+O PyInstaller às vezes não detecta o psutil automaticamente. Solução:
+
+```bash
+pyinstaller --onefile --windowed --name "OtimizadorPC" --hidden-import=psutil otimizador_pc_v2.py
+```
+
+### ❌ Antivírus bloqueia o .exe
+É normal — antivírus desconfiam de executáveis gerados por PyInstaller porque é uma técnica também usada em malware. O arquivo é seguro, mas se quiser distribuir para outras pessoas, pode assinar digitalmente (processo mais avançado, não necessário agora).
+
+### ❌ O app abre e fecha imediatamente
+Isso acontece quando tem um erro em tempo de execução. Para depurar, rode **sem** a flag `--windowed` primeiro:
+
+```bash
+pyinstaller --onefile --name "OtimizadorPC" otimizador_pc_v2.py
+```
+
+Assim o terminal fica aberto e você vê a mensagem de erro.
+
+### ❌ "Failed to execute script"
+Apague as pastas `build/` e `dist/` e o arquivo `.spec`, e rode o comando novamente do zero.
+
+---
+
+## O que adicionar ao .gitignore
+
+O PyInstaller gera bastante coisa que não precisa subir pro GitHub. Crie ou edite o `.gitignore` na raiz do repositório e adicione:
+
+```
+# PyInstaller
+build/
+dist/
+*.spec
+```
+
+---
+
+## Resultado final
+
+Após seguir o guia, você vai ter um `OtimizadorPC.exe` que:
+
+- ✅ Roda sem precisar instalar Python
+- ✅ Abre direto com a interface gráfica
+- ✅ Funciona em qualquer Windows (7/10/11)
+- ✅ Pode ser compartilhado com qualquer pessoa
